@@ -1,9 +1,9 @@
 library(shiny)
-
+# Define Serverr
 shinyServer(function(input, output){
-        
+#       Create the reaactie expressions for desired variable input        
         sliderValues <- reactive({
-          
+#               Compose a data frame for possible dispaly         
                 data.frame(
                         Name <- c("Integer", "Decimal", "Pi Factor"),
                         
@@ -11,7 +11,8 @@ shinyServer(function(input, output){
                         
                         stringAsFactors = FALSE)               
         })
-        
+
+#       Use the reactive variable in the defined chart output
         output$plot1 <- renderPlot({
                 f1=jitter(sample(c(1,input$integer),1)); f2=jitter(sample(c(1,input$integer),1));
                 f3=jitter(sample(c(1,input$integer),1)); f4=jitter(sample(c(1,input$integer),1))
