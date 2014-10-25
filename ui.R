@@ -1,19 +1,19 @@
-year <- c(1990:2014)
-football <- load("weeklystatsdf.rda")
+library(shiny)
+
 shinyUI(fluidPage(
-        titlePanel("Football Data"),
+        titlePanel("Super Spirograph"),
         
         sidebarLayout(
                 sidebarPanel(
-                        helpText("View a seasons worth of NFL Football data."),
+                        helpText("Choose variables "),
                         
-                        selectInput("dataset", 
-                                    label = "Choose a year to display",
-                                    choices = year,
-                                    selected = 2014)
-                       
-                ),
-                
-                mainPanel(dataTableOutput("table"))
-        )
-))
+                        sliderInput("integer", "Jitter:", min=0, max=20, value=10),
+                        
+                        sliderInput("decimal", "Run:", min = 0, max = .010, value = .005, step = .001 ),
+                        
+                        sliderInput('pi', 'PI factor:', min = 1, max = 10, value = 5, step = 1 )
+                        ),
+                mainPanel(
+                        plotOutput("plot1")
+                        )
+)))
