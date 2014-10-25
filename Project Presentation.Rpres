@@ -1,0 +1,62 @@
+Shiny Application Project Sales Pitch
+========================================================
+author: WPMcdonald
+date: 25 October, 2014
+
+Background
+========================================================
+
+
+When I was a child (far too long ago!) I was given a gift one Christmas of a toy that was all the rage at the time ... a Spirograph. 
+
+I was a nerd in heaven! Especially since no one else in the family ever seemed to want to play with it. This is a very important point when you are the smallest in the family and claiming something as your own can be a battle
+
+As I have been exploring the World of R I came across a wonderful blog by another user as he explores this world as well and introduced me to a very similar mathematical construct called a "Harmonograph"
+
+Haromonograph Mathematics
+========================================================
+
+Mathematically a Harmonograph creates its images based on the movement of one or more damped pendulums with the following formulae: 
+
+$$
+x(t) = A_1\sin(tf_1 + p_1) e^{-d_1t}) + A_2\sin(tf_2 + p_2) e^{-d_2t}\\
+\\
+y(t) = A_3\sin(tf_3 + p_3) e^{-d_3t}) + A_4\sin(tf_4 + p_4) e^{-d_4t}
+$$
+where
+$$
+f = frequency, \\
+p = phase, \\
+A = amplitude, \\
+d = damping, 
+\\t = time$$
+
+
+Sample Plot
+========================================================
+So what does this look like with a few random variables
+
+```{r, echo=FALSE}
+d1 <- .01; d2 <- .001; d3 <-.0003; d4 <- .002
+f1 <- 2; f2<- 7; f3<- .5; f4<-25
+p1<- pi; p2<- 4; p3<- 25; p4<- 45
+xt = function(t) exp(-d1*t)*cos(t*f1+p1)+exp(-d2*t)*sin(t*f2+p2)
+yt = function(t) exp(-d3*t)*cos(t*f3+p3)+exp(-d4*t)*sin(t*f4+p4)
+t=seq(1, 100, by=.0005)
+dat=data.frame(t=t, x=xt(t), y=yt(t))
+with(dat, plot(x,y, type="l", xlim =c(-2,2), ylim =c(-2,2), xlab = "", ylab = "", xaxt='n', yaxt='n'))
+```
+
+Play 
+========================================================
+
+Simply go to my shiny.io account site
+
+https://wpmcdonald.shinyapps.io/ProjectFiles/
+
+and play with moidfying a few of the variables
+
+Next we'll try working out the formula for the classic Spirograph which describes a similar sinusoidal path though based more on the relative size of two circles.
+
+
+
