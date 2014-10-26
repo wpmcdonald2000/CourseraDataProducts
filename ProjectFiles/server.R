@@ -3,13 +3,12 @@ library(shiny)
 shinyServer(function(input, output){
 #       Create the reaactie expressions for desired variable input        
         sliderValues <- reactive({
+                
 #               Compose a data frame for possible dispaly         
                 data.frame(
-                        Name <- c("Integer", "Decimal", "Pi Factor"),
-                        
-                        Value <- as.character(c(input$integer, input$decimal, input$pi)),
-                        
-                        stringAsFactors = FALSE)               
+                        Name <- c("Integer", "Decimal", "Pi Factor", 'L Spir','U Spir'),                        
+                        Value <- as.character(c(input$integer, input$decimal, input$pi, input$spir[1], input$spir[2]),                        
+                        stringAsFactors = FALSE))               
         })
 
 #       Use the reactive variable in the defined chart output
@@ -26,5 +25,18 @@ shinyServer(function(input, output){
                 dat=data.frame(t=t, x=xt(t), y=yt(t))
                 COL <- rainbow(nrow(dat))
                 with(dat, plot(x,y, type="l", xlim =c(-2,2), ylim =c(-2,2), xlab = "", ylab = "", xaxt='n', yaxt='n'))
-        })       
+        })
+
+        output$plot2 <- renderPlot({
+                R <- 3
+                l <- jitter(sample(c(input$spir[1],input$spir[2]),1))
+                k <- jitter(sample(c(input$spir[1],input$spir[2]),1))
+                kf <- (1 - k)/k
+                x_t = function(t) R*((1 - k)*cos(t) + l * k*cos(kf*t))
+                y_t = function(t) R*((1 - k)*sin(t) + l * k*sin(kf*t))
+                t_=seq(1, 60*pi, by= pi/1000)
+                dat=data.frame(t=t_, x=xt(t_), y=yt(t_))
+                COL <- rainbow(nrow(dat))
+                with(dat, plot(x,y, type="l", xlim =c(-3,3), ylim =c(-3,3), xlab = "", ylab = "", xaxt='n', yaxt='n'))
+        })
 })

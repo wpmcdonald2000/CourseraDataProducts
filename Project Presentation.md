@@ -39,6 +39,7 @@ So what does this look like with a few random variables
 
 ![plot of chunk unnamed-chunk-1](Project Presentation-figure/unnamed-chunk-1.png) 
 
+
 Play 
 ========================================================
 
