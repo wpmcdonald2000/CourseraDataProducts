@@ -11,9 +11,10 @@ When I was a child (far too long ago!) I was given a gift one Christmas of a toy
 
 I was a nerd in heaven! Especially since no one else in the family ever seemed to want to play with it. This is a very important point when you are the smallest in the family and claiming something as your own can be a battle
 
-As I have been exploring the World of R I came across a wonderful blog by another user as he explores this world as well and introduced me to a very similar mathematical construct called a "Harmonograph"
+As I have been exploring the World of R I came across a wonderful blog by another user as he explores this world as well and introduced me to a very similar mathematical construct called a "Harmonograph". You can read about about it here. [Ripples: Very Small Waves in R](http://aschinchon.wordpress.com/2014/10/13/beautiful-curves-the-harmonograph/)
 
-Haromonograph Mathematics
+
+Harmonograph Mathematics
 ========================================================
 
 Mathematically a Harmonograph creates its images based on the movement of one or more damped pendulums with the following formulae: 
@@ -43,7 +44,7 @@ Play
 
 Simply go to my shiny.io account site
 
-https://wpmcdonald.shinyapps.io/ProjectFiles/
+[ShinyApps:wpmcdonald](https://wpmcdonald.shinyapps.io/ProjectFiles/)
 
 and play with moidfying a few of the variables
 
