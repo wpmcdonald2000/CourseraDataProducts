@@ -29,8 +29,8 @@ shinyServer(function(input, output){
 
         output$plot2 <- renderPlot({
                 R <- 3
-                l <- jitter(sample(c(input$spir[1],input$spir[2]),1))
-                k <- jitter(sample(c(input$spir[1],input$spir[2]),1))
+                l <- jitter(sample(c(.2,.8),1))
+                k <- jitter(sample(c(.2,.8),1))
                 kf <- (1 - k)/k
                 x_t = function(t) R*((1 - k)*cos(t) + l * k*cos(kf*t))
                 y_t = function(t) R*((1 - k)*sin(t) + l * k*sin(kf*t))
