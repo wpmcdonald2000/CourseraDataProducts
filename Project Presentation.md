@@ -6,7 +6,6 @@ date: 25 October, 2014
 Background
 ========================================================
 
-
 When I was a child (far too long ago!) I was given a gift one Christmas of a toy that was all the rage at the time ... a Spirograph. 
 
 I was a nerd in heaven! Especially since no one else in the family ever seemed to want to play with it. This is a very important point when you are the smallest in the family and claiming something as your own can be a battle
